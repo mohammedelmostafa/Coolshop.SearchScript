@@ -24,11 +24,11 @@ namespace Coolshop.SearchScript
 
             filePath = string.Join("@", filePath);
 
-            Console.WriteLine(string.Join(",",readRecord(searchKey, filePath, ColNum)));           
+            Console.WriteLine(string.Join(",",readRecord(filePath, searchKey, ColNum)));           
             Console.ReadLine();
         }
 
-       public static string[] readRecord(string searchKey,string filePath,int ColNum)
+       public static string[] readRecord(string filePath, string searchKey, int ColNum)
         {
             ColNum--;
             string[] recordNotFound = { "Record Not Found"};
@@ -55,9 +55,9 @@ namespace Coolshop.SearchScript
             }
         }
 
-        public static bool recordMatches(string searchKey, string[] records, int position)
+        public static bool recordMatches(string searchKey, string[] record, int position)
         {
-            if (records[position].Equals(searchKey))
+            if (record[position].Equals(searchKey))
             {
                 return true;
             }
